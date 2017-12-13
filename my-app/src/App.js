@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Head/>
-        <Body myList={people}/>
+          <Body myList={people} initialName={'Max'}>This is a paragraph</Body>
       </div>
     );
   }
