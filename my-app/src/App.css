@@ -26,3 +26,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.Head .nav-list li{
+  list-style: none;
+  display: inline-block;
+  margin: 10px;
+}
