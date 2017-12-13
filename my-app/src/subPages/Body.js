@@ -14,14 +14,19 @@ class Body extends Component {
         });
     }
 
+    booob(){
+        this.props.myFun(this.state.name)
+    }
+
     render() {
         return (
             <div className="Body">
                 <h1>Hello from Body</h1>
                 <ul>{this.props.myList.hobbies.map((hobbie, index) => <li key={index}>{hobbie}</li>)}</ul>
-                <p>{this.props.children}</p>
+                <p>{this.props.schildren}</p>
                 <p>{this.state.name}</p>
-                <button onClick={this.btnClicked.bind(this)}>Change the name</button>
+                <button onClick={this.btnClicked.bind(this)}>Change the name</button><br /><br />
+                <button onClick={this.booob.bind(this)}>Run Function</button>
             </div>
         );
     }
