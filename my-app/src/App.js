@@ -1,36 +1,32 @@
 import React, { Component } from 'react';
-import Body from './subPages/Body';
-import Head from './subPages/Head';
 import './App.css';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import Home from '../src/subPage/Home';
+import About from '../src/subPage/About';
+import Card from './subPage/Card';
 
 class App extends Component {
-    constructor(){
-        super();
-        this.state = {
-            name: 'Sami'
-        }
-    }
-
-    appFunction(newName){
-        this.setState({
-            name: newName
-        });
-    }
-
-    render() {
-      var people = {
-          name: 'Younes',
-          hobbies: ['sport', 'guitar']
-      }
-
+  render() {
     return (
       <div className="App">
-          <Head/>
-          <Body myList={people} initialName={'Max'} myFun={this.appFunction.bind(this)}>This is a paragraph</Body>
-          <div>{this.state.name}</div>
+          <Router>
+            <div>
+                <nav>
+                  <ul>
+                    <li><Link to="/">Developers</Link></li>
+                    <li><Link to="/about">Human Resources</Link></li>
+                  </ul>
+                </nav>
+                <Route exact path="/" component={Home}/>
+                <Route path="/about" component={About}/>
+            </div>
+          </Router>
+          <Card/>
       </div>
     );
   }
 }
 
 export default App;
+
+
