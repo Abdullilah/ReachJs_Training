@@ -13,14 +13,15 @@ class App extends Component {
             <div>
                 <nav>
                   <ul>
-                    <li><Link to="/">Developers</Link></li>
-                    <li><Link to="/about">Human Resources</Link></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
                   </ul>
                 </nav>
                 <Route exact path="/" component={Home}/>
                 <Route path="/about" component={About}/>
             </div>
           </Router>
+
           <Card/>
       </div>
     );
